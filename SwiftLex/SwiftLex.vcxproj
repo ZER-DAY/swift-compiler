@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <Flex Include="swift.l" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="nodes\ClassDeclNode.cpp" />
+    <ClCompile Include="nodes\DestructorDeclNode.cpp" />
+    <ClCompile Include="nodes\ConstructorDeclNode.cpp" />
+    <ClCompile Include="nodes\AccessModifierNode.cpp" />
+    <ClCompile Include="nodes\EnumDeclarationNode.cpp" />
+    <ClCompile Include="nodes\EnumCaseNode.cpp" />
+    <ClCompile Include="nodes\IdListNode.cpp" />
+    <ClCompile Include="nodes\CaseElementNode.cpp" />
+    <ClCompile Include="nodes\CatchNode.cpp" />
+    <ClCompile Include="nodes\DoCatchNode.cpp" />
+    <ClCompile Include="nodes\FuncDeclNode.cpp" />
+    <ClCompile Include="nodes\FuncDeclArgNode.cpp" />
+    <ClCompile Include="nodes\IfElseNode.cpp" />
+    <ClCompile Include="nodes\LoopNode.cpp" />
+    <ClCompile Include="nodes\FuncCallNode.cpp" />
+    <ClCompile Include="nodes\FuncCallArgNode.cpp" />
+    <ClCompile Include="nodes\dotHelpers.cpp" />
+    <ClCompile Include="nodes\idsystem.cpp" />
+    <ClCompile Include="nodes\StmtNode.cpp" />
+    <ClCompile Include="nodes\ReturnNode.cpp" />
+    <ClCompile Include="nodes\StructDeclarationNode.cpp" />
+    <ClCompile Include="swift.flex.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="swift.tab.cpp" />
+    <ClCompile Include="nodes\ExprNode.cpp" />
+    <ClCompile Include="nodes\TypeNode.cpp" />
+    <ClCompile Include="nodes\VarDeclarationNode.cpp" />
+    <ClCompile Include="nodes\TypeForGenericNode.cpp" />
+    <ClCompile Include="nodes\ThrowNode.cpp" />
+    <ClCompile Include="nodes\TryNode.cpp" />
+    <ClCompile Include="nodes\SwitchNode.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Bison Include="swift.y" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="nodes\ClassDeclNode.h" />
+    <ClInclude Include="nodes\DestructorDeclNode.h" />
+    <ClInclude Include="nodes\ConstructorDeclNode.h" />
+    <ClInclude Include="nodes\AccessModifierNode.h" />
+    <ClInclude Include="nodes\EnumDeclarationNode.h" />
+    <ClInclude Include="nodes\EnumCaseNode.h" />
+    <ClInclude Include="nodes\IdListNode.h" />
+    <ClInclude Include="nodes\CaseElementNode.h" />
+    <ClInclude Include="nodes\CatchNode.h" />
+    <ClInclude Include="nodes\DoCatchNode.h" />
+    <ClInclude Include="nodes\FuncDeclNode.h" />
+    <ClInclude Include="nodes\FuncDeclArgNode.h" />
+    <ClInclude Include="nodes\IfElseNode.h" />
+    <ClInclude Include="nodes\LoopNode.h" />
+    <ClInclude Include="nodes\FuncCallNode.h" />
+    <ClInclude Include="nodes\FuncCallArgNode.h" />
+    <ClInclude Include="nodes\GenericListNode.h" />
+    <ClInclude Include="nodes\dottable.h" />
+    <ClInclude Include="nodes\dotHelpers.h" />
+    <ClInclude Include="globalVars.h" />
+    <ClInclude Include="nodes\idsystem.h" />
+    <ClInclude Include="nodes\StmtNode.h" />
+    <ClInclude Include="nodes\ReturnNode.h" />
+    <ClInclude Include="nodes\StructDeclarationNode.h" />
+    <ClInclude Include="swift.tab.h" />
+    <ClInclude Include="nodes\ExprNode.h" />
+    <ClInclude Include="allNodes.h" />
+    <ClInclude Include="nodes\TypeNode.h" />
+    <ClInclude Include="nodes\VarDeclarationNode.h" />
+    <ClInclude Include="nodes\TypeForGenericNode.h" />
+    <ClInclude Include="nodes\ThrowNode.h" />
+    <ClInclude Include="nodes\TryNode.h" />
+    <ClInclude Include="nodes\SwitchNode.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{f97b5ca7-4749-489e-98d1-82f1ec59e71f}</ProjectGuid>
+    <RootNamespace>SwiftLex</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="win_flex_bison\win_flex_bison_custom_build.props" />
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuildStep />
+    <CustomBuildStep />
+    <CustomBuildStep />
+    <PostBuildEvent>
+      <Command>copy /b main.cpp +,,</Command>
+    </PostBuildEvent>
+    <Bison>
+      <Verbose>true</Verbose>
+      <AdditionalOptions>-Wcounterexamples %(AdditionalOptions)</AdditionalOptions>
+    </Bison>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="win_flex_bison\win_flex_bison_custom_build.targets" />
+  </ImportGroup>
+</Project>

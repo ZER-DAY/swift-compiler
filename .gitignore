@@ -1,0 +1,28 @@
+## Visual Studio files
+*.suo
+*.user
+*.userosscache
+.vs/
+
+## Build results
+Debug/
+Release/
+x64/
+x86/
+*.exe
+*.dll
+*.pdb
+*.obj
+
+## Flex/Bison generated files
+*.tab.cpp
+*.tab.hpp
+*.tab.h
+*.flex.cpp
+swift.tab.*
+swift.flex.*
+lex.yy.c
+
+## Windows
+Thumbs.db
+Desktop.ini
