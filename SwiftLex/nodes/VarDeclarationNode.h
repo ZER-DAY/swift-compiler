@@ -54,7 +54,7 @@ public:
 
 	AccessModifierListNode* _modifiers;
 	bool _hasModifiers = false;
-
+	bool _isConstant = false;  //
 	static VarDeclarationNode* createFromValue(std::string varName, ExprNode* value);
 
 	static VarDeclarationNode* createFromType(std::string varName, TypeNode* type);

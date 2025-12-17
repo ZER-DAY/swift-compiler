@@ -93,7 +93,7 @@ void SemanticAnalyzer::analyzeStmt(StmtNode* stmt) {
                 if (!varDecl) continue;
 
                 std::string varName = varDecl->_varName;
-                bool isConstant = false; // نحتاج نعرف كيف نحدد let vs var
+                bool isConstant = varDecl->_isConstant;  //  الآن يقرأ من VarDeclarationNode!
 
                 if (symbolTable.lookupSymbol(varName)) {
                     addError(SemanticError::ErrorType::RedeclaredVariable,

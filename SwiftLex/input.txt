@@ -1,12 +1,5 @@
-let x: Int = 42
-var y: Int = 10
+﻿let x: Int = 10
+var y: Int = 20
 
-func add(a: Int, b: Int) -> Int {
-    return a + b
-}
-
-let result = add(a: x, b: y)
-
-if result > 50 {
-    print("Large number")
-}
+x = 15
+y = 25

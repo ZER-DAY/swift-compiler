@@ -711,8 +711,20 @@ varVarList: varList {$$ = $1;}
     | varVarList ',' varList { $$ = $$->appendNodeList($3);}
     ;
         
-varDeclIncommplete: VAR varVarList {printf("P: varDeclIncommplete\n"); $$ = $2;}
-    | LET varVarList {printf("P: varDeclIncommplete\n"); $$ = $2;}
+varDeclIncommplete: VAR varVarList {
+        printf("P: varDeclIncommplete\n"); 
+        $$ = $2;
+    }
+    | LET varVarList {
+        printf("P: varDeclIncommplete\n"); 
+        $$ = $2;
+        // Mark all declarations in this list as let (constant)
+        for (auto varDecl : $$->_vec) {
+            if (varDecl) {
+                varDecl->_isConstant = true;
+            }
+        }
+    }
     ;
 
 varDeclaration: modifiersWordsList varDeclIncommplete {printf("P: variable declaration with prefix\n"); $$ = $2; $$ = $$->addModifiers($1);}
