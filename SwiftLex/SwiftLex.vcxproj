@@ -53,6 +53,9 @@
     <ClCompile Include="nodes\ThrowNode.cpp" />
     <ClCompile Include="nodes\TryNode.cpp" />
     <ClCompile Include="nodes\SwitchNode.cpp" />
+    <ClCompile Include="semantic\Symbol.cpp" />
+    <ClCompile Include="semantic\SymbolTable.cpp" />
+    <ClCompile Include="semantic\SemanticAnalyzer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
@@ -94,6 +97,9 @@
     <ClInclude Include="nodes\ThrowNode.h" />
     <ClInclude Include="nodes\TryNode.h" />
     <ClInclude Include="nodes\SwitchNode.h" />
+    <ClInclude Include="semantic\Symbol.h" />
+    <ClInclude Include="semantic\SymbolTable.h" />
+    <ClInclude Include="semantic\SemanticAnalyzer.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -184,6 +190,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
