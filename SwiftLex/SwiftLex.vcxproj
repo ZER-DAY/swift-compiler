@@ -56,6 +56,9 @@
     <ClCompile Include="semantic\Symbol.cpp" />
     <ClCompile Include="semantic\SymbolTable.cpp" />
     <ClCompile Include="semantic\SemanticAnalyzer.cpp" />
+    <ClCompile Include="ir\IRInstruction.cpp" />
+    <ClCompile Include="ir\IR.cpp" />	  
+    <ClCompile Include="ir\IRGenerator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
@@ -100,6 +103,9 @@
     <ClInclude Include="semantic\Symbol.h" />
     <ClInclude Include="semantic\SymbolTable.h" />
     <ClInclude Include="semantic\SemanticAnalyzer.h" />
+    <ClInclude Include="ir\IRInstruction.h" />
+    <ClInclude Include="ir\IR.h" />
+    <ClInclude Include="ir\IRGenerator.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

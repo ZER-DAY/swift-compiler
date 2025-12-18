@@ -3,6 +3,7 @@
 #include <string>
 #include "allNodes.h"
 #include "semantic/SemanticAnalyzer.h"
+#include "ir/IRGenerator.h"  //  أضفت هذا!
 
 extern int yylex();
 extern int yyparse();
@@ -12,6 +13,7 @@ extern StmtListNode* _root;
 int main(int argc, const char* argv[])
 {
 	std::string filename = "";
+
 #ifdef  _DEBUG
 	filename = "input.txt";
 #else
@@ -27,12 +29,15 @@ int main(int argc, const char* argv[])
 	std::ifstream inputFile(filename);
 	std::ofstream tempOutput(tempFileName);
 	std::string line;
-	while (std::getline(inputFile, line)) tempOutput << line << '\n';
+
+	while (std::getline(inputFile, line))
+		tempOutput << line << '\n';
 	tempOutput << '\n';
+
 	inputFile.close();
 	tempOutput.close();
-	fopen_s(&yyin, tempFileName.c_str(), "r");
 
+	fopen_s(&yyin, tempFileName.c_str(), "r");
 	if (!yyin)
 	{
 		std::cout << "Couldn't open file! Check the path!" << std::endl;
@@ -49,6 +54,7 @@ int main(int argc, const char* argv[])
 		std::remove(tempFileName.c_str());
 		return 1;
 	}
+
 	fclose(yyin);
 	std::remove(tempFileName.c_str());
 
@@ -60,11 +66,23 @@ int main(int argc, const char* argv[])
 		bool semanticSuccess = analyzer.analyze(_root);
 
 		if (!semanticSuccess) {
-			std::cout << "\n❌ Semantic analysis failed!" << std::endl;
+			std::cout << "\n Semantic analysis failed!" << std::endl;
 			return 1;
 		}
 
 		std::cout << "\n Semantic analysis passed!" << std::endl;
+
+		// ============ IR GENERATION ============
+		IRGenerator irGen;
+		bool irSuccess = irGen.generate(_root);
+
+		if (!irSuccess) {
+			std::cerr << "\n IR generation failed!" << std::endl;
+			return 1;
+		}
+
+		// Print generated IR
+		irGen.printIR();
 
 		// ============ DOT GENERATION ============
 		std::ofstream dotFile;

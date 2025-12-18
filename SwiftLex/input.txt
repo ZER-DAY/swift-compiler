@@ -1,5 +1,4 @@
 ﻿let x: Int = 10
-var y: Int = 20
-
-x = 15
-y = 22
+let y: Int = 20
+let sum = x + y
+let product = x * y
